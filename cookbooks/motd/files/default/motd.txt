@@ -1,0 +1,5 @@
+# the variables will NOT be evaluated!
+
+home is <%= ENV['HOME'] %>
+ipaddress is <%= node[:ipaddress] %>
+hello, happy day!

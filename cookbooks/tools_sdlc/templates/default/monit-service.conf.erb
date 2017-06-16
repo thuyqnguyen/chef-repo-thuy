@@ -1,0 +1,7 @@
+#monit-service.conf.erb
+check process <%= @service_name %> with pidfile <%= @pid_file %>
+    group sdlc
+    start program = "/etc/init.d/<%= @service_name %> start"
+    stop program = "/etc/init.d/<%= @service_name %> stop"
+    if does not exist for <%= @not_started_cycles %> cycles then start
+    if <%=@restart_limit %> restarts within <%= @restart_cycles %> cycles then exec "/bin/bash -c '/etc/monit/pagerduty-event.sh <%= @description %>'"

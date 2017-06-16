@@ -1,0 +1,10 @@
+name 'tools_nexus'
+maintainer 'Mehregan Nejat'
+maintainer_email 'Mehregan_Nejat@intuit.com'
+license 'all_rights'
+description 'Installs/Configures tools_nexus'
+long_description 'Installs/Configures tools_nexus'
+version '0.1.4'
+
+depends 'platform_chef-splunk', '= 2.0.20'
+depends 'platform_newrelic', '= 0.1.5'

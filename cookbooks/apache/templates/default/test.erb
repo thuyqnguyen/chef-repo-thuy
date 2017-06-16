@@ -1,0 +1,14 @@
+<%# Test normal <% %>
+<% 4.times do %>
+<%= node['apache']['greeter'] %> says <%= node['apache']['greeting'] %>
+<% end %>
+
+<%# Test <%- %>
+<%- 3.times do %>
+<%= node['apache']['greeter'] %> says <%= node['apache']['greeting'] %>
+<% end %>
+
+<%# Test -%> %>
+<% 3.times do -%>
+<%= @greeter %> says <%= @greeting %>
+<% end %>

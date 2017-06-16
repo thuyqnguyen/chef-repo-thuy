@@ -1,0 +1,19 @@
+Vagrant.configure("2") do |config|
+  config.vm.hostname = "mysdlc"
+  config.vm.box = "anandbitra/redhat-6.5"
+  # use the same chef version of sdlc to avoid java bug, and others
+  config.omnibus.chef_version = "12.0.3" 
+  config.vm.provision "chef_client" do |chef|
+    chef.chef_server_url = "https://api.chef.io/organizations/thuy"
+    chef.validation_key_path = "/Users/tnguyen27/chef-repo-thuy/.chef/thuy-validator.pem"
+    chef.validation_client_name = "thuy-validator"
+    chef.node_name = "pprfsdlas300.corp.intuit.net"
+    chef.environment = "tools_prflva"
+    chef.run_list = [
+        'mysdlc::default'
+      ]
+    # when tear down, and don't need any more  
+    chef.delete_node = true
+    chef.delete_client = true
+  end
+end

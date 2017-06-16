@@ -1,0 +1,52 @@
+{
+  "create": {
+    "actors": [
+      "pivotal",
+      "thuy_ws"
+    ],
+    "groups": [
+      "admins",
+      "users"
+    ]
+  },
+  "read": {
+    "actors": [
+      "pivotal",
+      "thuy_ws"
+    ],
+    "groups": [
+      "admins",
+      "clients",
+      "users"
+    ]
+  },
+  "update": {
+    "actors": [
+      "pivotal",
+      "thuy_ws"
+    ],
+    "groups": [
+      "admins",
+      "users"
+    ]
+  },
+  "delete": {
+    "actors": [
+      "pivotal",
+      "thuy_ws"
+    ],
+    "groups": [
+      "admins",
+      "users"
+    ]
+  },
+  "grant": {
+    "actors": [
+      "pivotal",
+      "thuy_ws"
+    ],
+    "groups": [
+      "admins"
+    ]
+  }
+}

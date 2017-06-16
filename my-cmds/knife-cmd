@@ -1,0 +1,34 @@
+# eval `ssh-agent` && ssh-add ~\.ssh\thuy-cali-rsa.pem
+knife bootstrap 52.9.171.49 -N thuy-one -x ec2-user --sudo
+
+# run a command on collection of searched nodes
+knife ssh 'name:*' 'sudo chef-client' -i ~/.ssh/thuy-cali-rsa.pem -x ec2-user  -a ec2.public_ipv4
+knife ssh 'name:*' 'uptime' -i ~/.ssh/thuy-cali-rsa.pem -x ec2-user  -a ec2.public_ipv4
+# all ec2 servers. ec2 is an attribute of the node (knife node show xxx -l)
+knife ssh 'ec2:*' 'uptime' -i ~/.ssh/thuy-cali-rsa.pem -x ec2-user  -a ec2.public_ipv4
+
+#search
+
+knife  search users id:phuong
+1 items found
+
+chef_type: data_bag_item
+data_bag:  users
+groups:    family
+id:        phuong
+shell:     /bin/bash
+ssh_keys:  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC55qa5mAW3fi59PRfTRjfW5lptN8JehqnDF8oKqvHtpoFDbysQa+fc+nl+SI/E3u5kkTtM2ABZWxeb0oOQm6GAtGq/pcNikHDEYGfYboC3uMGk9tivi5Xxdqo3ana6muOnVK/qOZ/P9hzH6CMVZPk/91iipmdFbtaEeFQxvMr/Ro0Yx2DxKtDPIP3X9G3W+jh3owp8ikESw3VcfSfggS0RYaQpRSb1DQ0sBCNrLFtuAD205LWCne+GttqQFLiIauT2x7AGbmSO2ioRO2QX8Dr19EfA60nncGbHWZYqm1RTy1L4k/gtL5XA1qJF92xfL2eslUKefloHX+OVLa2aqoTX thuy-cali-rsa
+uid:       1002
+
+chef-shell
+search('users', *:*)
+ => [data_bag_item["users", "thuy", {"id"=>"thuy", "groups"=>["family"], "uid"=>1001, "ssh_keys"=>["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC55qa5mAW3fi59PRfTRjfW5lptN8JehqnDF8oKqvHtpoFDbysQa+fc+nl+SI/E3u5kkTtM2ABZWxeb0oOQm6GAtGq/pcNikHDEYGfYboC3uMGk9tivi5Xxdqo3ana6muOnVK/qOZ/P9hzH6CMVZPk/91iipmdFbtaEeFQxvMr/Ro0Yx2DxKtDPIP3X9G3W+jh3owp8ikESw3VcfSfggS0RYaQpRSb1DQ0sBCNrLFtuAD205LWCne+GttqQFLiIauT2x7AGbmSO2ioRO2QX8Dr19EfA60nncGbHWZYqm1RTy1L4k/gtL5XA1qJF92xfL2eslUKefloHX+OVLa2aqoTX thuy-cali-rsa"], "shell"=>"/bin/bash"}], data_bag_item["users", "child", {"id"=>"child", "groups"=>["family"], "uid"=>1003, "ssh_keys"=>["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC55qa5mAW3fi59PRfTRjfW5lptN8JehqnDF8oKqvHtpoFDbysQa+fc+nl+SI/E3u5kkTtM2ABZWxeb0oOQm6GAtGq/pcNikHDEYGfYboC3uMGk9tivi5Xxdqo3ana6muOnVK/qOZ/P9hzH6CMVZPk/91iipmdFbtaEeFQxvMr/Ro0Yx2DxKtDPIP3X9G3W+jh3owp8ikESw3VcfSfggS0RYaQpRSb1DQ0sBCNrLFtuAD205LWCne+GttqQFLiIauT2x7AGbmSO2ioRO2QX8Dr19EfA60nncGbHWZYqm1RTy1L4k/gtL5XA1qJF92xfL2eslUKefloHX+OVLa2aqoTX thuy-cali-rsa"], "shell"=>"/bin/nologin", "action"=>"create"}], data_bag_item["users", "phuong", {"id"=>"phuong", "groups"=>["family"], "uid"=>1002, "ssh_keys"=>["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC55qa5mAW3fi59PRfTRjfW5lptN8JehqnDF8oKqvHtpoFDbysQa+fc+nl+SI/E3u5kkTtM2ABZWxeb0oOQm6GAtGq/pcNikHDEYGfYboC3uMGk9tivi5Xxdqo3ana6muOnVK/qOZ/P9hzH6CMVZPk/91iipmdFbtaEeFQxvMr/Ro0Yx2DxKtDPIP3X9G3W+jh3owp8ikESw3VcfSfggS0RYaQpRSb1DQ0sBCNrLFtuAD205LWCne+GttqQFLiIauT2x7AGbmSO2ioRO2QX8Dr19EfA60nncGbHWZYqm1RTy1L4k/gtL5XA1qJF92xfL2eslUKefloHX+OVLa2aqoTX thuy-cali-rsa"], "shell"=>"/bin/bash"}]] 
+
+search('users', *:*)[2]
+ => data_bag_item["users", "phuong", {"id"=>"phuong", "groups"=>["family"], "uid"=>1002, "ssh_keys"=>["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC55qa5mAW3fi59PRfTRjfW5lptN8JehqnDF8oKqvHtpoFDbysQa+fc+nl+SI/E3u5kkTtM2ABZWxeb0oOQm6GAtGq/pcNikHDEYGfYboC3uMGk9tivi5Xxdqo3ana6muOnVK/qOZ/P9hzH6CMVZPk/91iipmdFbtaEeFQxvMr/Ro0Yx2DxKtDPIP3X9G3W+jh3owp8ikESw3VcfSfggS0RYaQpRSb1DQ0sBCNrLFtuAD205LWCne+GttqQFLiIauT2x7AGbmSO2ioRO2QX8Dr19EfA60nncGbHWZYqm1RTy1L4k/gtL5XA1qJF92xfL2eslUKefloHX+OVLa2aqoTX thuy-cali-rsa"], "shell"=>"/bin/bash"}] 
+
+search('users', *:*)[2][:id]
+ => "phuong" 
+
+
+

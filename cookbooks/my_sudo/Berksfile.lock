@@ -1,0 +1,10 @@
+DEPENDENCIES
+  my_sudo
+    path: .
+    metadata: true
+  sudo
+
+GRAPH
+  my_sudo (0.1.0)
+    sudo (>= 0.0.0)
+  sudo (2.9.0)

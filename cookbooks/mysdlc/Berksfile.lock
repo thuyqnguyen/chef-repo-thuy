@@ -1,0 +1,7 @@
+DEPENDENCIES
+  mysdlc
+    path: .
+    metadata: true
+
+GRAPH
+  mysdlc (0.1.0)

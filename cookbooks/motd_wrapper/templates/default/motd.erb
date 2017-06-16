@@ -1,0 +1,6 @@
+<%= @from_the_master %>
+home is <%= ENV['HOME'] %>
+ipaddress is <%= node['ipaddress'] %>
+1) here is your message: <%= node['motd']['message'] %>
+2) here is your message (No newline appended here!): <%= node['motd']['message']-%>
+3) here is your message: <%= node['motd']['message'] %>

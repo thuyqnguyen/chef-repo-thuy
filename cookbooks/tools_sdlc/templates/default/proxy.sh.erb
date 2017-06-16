@@ -1,0 +1,4 @@
+#proxy.rb
+export http_proxy=http://<%= @proxy %>:80
+export https_proxy=http://<%= @proxy %>:80
+export no_proxy=localhost,10.*,127.0.0.1,intuit.net,intuit.com

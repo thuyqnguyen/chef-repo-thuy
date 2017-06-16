@@ -1,0 +1,10 @@
+DEPENDENCIES
+  my_users
+    path: .
+    metadata: true
+  users
+
+GRAPH
+  my_users (0.1.1)
+    users (>= 0.0.0)
+  users (2.0.3)

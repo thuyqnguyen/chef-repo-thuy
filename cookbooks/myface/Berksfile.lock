@@ -1,0 +1,7 @@
+DEPENDENCIES
+  myface
+    path: .
+    metadata: true
+
+GRAPH
+  myface (0.1.0)

@@ -1,0 +1,21 @@
+DEPENDENCIES
+  tools_nexus
+    path: .
+    metadata: true
+
+GRAPH
+  chef-splunk (1.2.0)
+    chef-vault (>= 1.0.4)
+  chef-vault (1.1.2)
+  platform_chef-splunk (2.0.20)
+    chef-splunk (= 1.2.0)
+    chef-vault (= 1.1.2)
+    platform_yum (= 2.1.0)
+  platform_newrelic (0.1.5)
+    platform_yum (= 2.1.0)
+  platform_yum (2.1.0)
+    yum (= 3.2.0)
+  tools_nexus (0.1.4)
+    platform_chef-splunk (= 2.0.20)
+    platform_newrelic (= 0.1.5)
+  yum (3.2.0)

@@ -1,0 +1,12 @@
+check process tomcat with pidfile "<%= @tomcatHome %>/var/run/tomcat7.pid"
+	start program = "<%= @tomcatHome %>/bin/splunk start"
+	stop program = "<%= @tomcatHome %>/bin/splunk stop"
+	alert <%= @recipient %> on { action, exec, nonexist }
+		with mail-format {
+			from: no-reply@intuit.com
+			reply-to: no-reply@intuit.com
+			subject: process $SERVICE on $HOST
+			message: $ACTION $SERVICE on $HOST: $DESCRIPTION.
+	}
+	if does not exist for 3 cycles then start
+	if 2 restarts within 4 cycles then alert

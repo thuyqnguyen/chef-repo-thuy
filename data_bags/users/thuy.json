@@ -1,0 +1,11 @@
+{
+  "id": "thuy",
+  "groups": [
+    "family"
+  ],
+  "uid": 1001,
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC55qa5mAW3fi59PRfTRjfW5lptN8JehqnDF8oKqvHtpoFDbysQa+fc+nl+SI/E3u5kkTtM2ABZWxeb0oOQm6GAtGq/pcNikHDEYGfYboC3uMGk9tivi5Xxdqo3ana6muOnVK/qOZ/P9hzH6CMVZPk/91iipmdFbtaEeFQxvMr/Ro0Yx2DxKtDPIP3X9G3W+jh3owp8ikESw3VcfSfggS0RYaQpRSb1DQ0sBCNrLFtuAD205LWCne+GttqQFLiIauT2x7AGbmSO2ioRO2QX8Dr19EfA60nncGbHWZYqm1RTy1L4k/gtL5XA1qJF92xfL2eslUKefloHX+OVLa2aqoTX thuy-cali-rsa"
+  ],
+  "shell": "/bin/bash"
+}

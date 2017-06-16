@@ -1,0 +1,8 @@
+source 'https://supermarket.platform.intuit.net'
+
+metadata
+
+#cookbook 'platform_java', '= 0.2.1'
+#cookbook 'platform_tomcat', '= 0.1.7'
+#cookbook 'platform_chef-splunk', '= 2.0.20'
+#cookbook "platform_newrelic", '= 0.1.5'
